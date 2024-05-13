@@ -1,0 +1,30 @@
+---
+# tasks file for simple_compose
+- name: Running simple_compose for Compose projects
+  loop: "{{ simple_compose_projects }}"
+  loop_control:
+    loop_var: project
+  when: simple_compose_projects is defined
+  block:
+    - name: Ensure {{ project.name }} project directory exists and is owned by user "{{ simple_compose_username }}" # noqa name[template]
+      ansible.builtin.file:
+        path: "{{ project.directory }}"
+        state: directory
+        owner: "{{ simple_compose_username }}"
+        group: "{{ simple_compose_username }}"
+        mode: "0700"
+
+    - name: Copy project files for "{{ project.name }}"
+      ansible.builtin.template:
+        dest: "{{ project.directory }}/{{ item }}"
+        src: "templates/{{ project.name }}/{{ item }}.j2"
+        owner: "{{ simple_compose_username }}"
+        group: "{{ simple_compose_username }}"
+        mode: "0400"
+      loop:
+        - .env
+        - docker-compose.yaml
+
+    - name: Bring up compose project for "{{ project.name }}"
+      community.docker.docker_compose_v2:
+        project_src: "{{ project.directory }}"

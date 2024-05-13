@@ -1,0 +1,13 @@
+{
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.autoIndent": "keep",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "files.associations": {
+    "**/*.{yml,yaml}": "ansible",
+    "**/templates/*.{yml,yaml}.j2": "ansible-jinja",
+    "**/templates/*.j2": "ansible-jinja"
+  }
+}

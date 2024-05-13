@@ -1,0 +1,8 @@
+---
+driver:
+  name: docker
+platforms:
+  - name: instance
+    # you might want to add your own variables here based on what provisioning
+    # you are doing like:
+    image: docker.io/ubuntu:22.04
