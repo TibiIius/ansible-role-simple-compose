@@ -33,6 +33,7 @@ Set `simple_compose_username` to the username of your Docker administering user.
 `simple_compose_projects` is a list of dictionaries that define the projects you want to deploy. Each dictionary should have the following keys:
 - `name`: The name of the project. This will be used to differentiate the loop runs in Ansible's CLI output, and also dicates the location to the template files used for the role.
 - `directory`: The directory where the project is located. This should be an absolute path.
+- `files`: All files belonging to the compose project, like `docker-compose.yaml`, `.db.env`, `.web.env`, `.env`, etc.
 
 Dependencies
 ------------
