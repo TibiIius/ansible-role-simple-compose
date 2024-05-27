@@ -3,6 +3,13 @@ driver:
   name: docker
 platforms:
   - name: instance
-    # you might want to add your own variables here based on what provisioning
-    # you are doing like:
-    image: docker.io/ubuntu:22.04
+    # Geerlingguy to the rescue. This image includes a lot of useful tools for testing, like systemd.
+    image: docker.io/geerlingguy/docker-ubuntu2204-ansible:latest
+    privileged: true
+    # Start with systemd as the init system
+    command: /usr/sbin/init
+    # systemd relevant stuff
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+

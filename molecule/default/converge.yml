@@ -1,8 +1,62 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  tasks:
-    - name: Replace this task with one that validates your content
-      ansible.builtin.debug:
-        msg: "This is the effective test"
+  gather_facts: true
+  become: true
+  vars:
+    username: "my_user"
+    simple_compose_projects:
+      - name: "nginx_example"
+        directory: "/opt/compose_deploy/nginx_example"
+        files:
+          - "docker-compose.yaml"
+      - name: "apache_example"
+        directory: "/opt/compose_deploy/apache_example"
+        files:
+          - "docker-compose.yml"
+
+  pre_tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+      when: ansible_os_family == 'Debian'
+      # We need to set this to false, otherwise the task will always be marked as changed, and idempotence will be lost, so tests will fail.
+      changed_when: false
+
+    - name: Ensure system-wide deps are installed
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - python3
+        - gnupg2
+      when: ansible_os_family == 'Debian'
+
+    - name: Create user "{{ username }}"
+      ansible.builtin.user:
+        name: "{{ username }}"
+        state: present
+        shell: /bin/bash
+        createhome: true
+
+    - name: Wait for systemd to complete initialization.
+      command: systemctl is-system-running
+      register: systemctl_status
+      until: >
+        'running' in systemctl_status.stdout or
+        'degraded' in systemctl_status.stdout
+      retries: 60
+      delay: 2
+      when: ansible_service_mgr == 'systemd'
+      changed_when: false
+      failed_when: systemctl_status.rc > 1
+
+  roles:
+    # Make sure we have Docker installed
+    - role: geerlingguy.docker
+      vars:
+        docker_users:
+          - "{{ username }}"
+    - role: tibilius.simple_compose
+      vars:
+        simple_compose_username: "{{ username }}"

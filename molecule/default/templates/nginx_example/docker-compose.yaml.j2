@@ -1,0 +1,11 @@
+services:
+  nginx-example:
+    image: docker.io/nginx:alpine
+    ports:
+      - 8080:80
+    healthcheck:
+      test: curl --fail http://localhost || exit 1
+      interval: 5s
+      retries: 5
+      start_period: 2s
+      timeout: 10s

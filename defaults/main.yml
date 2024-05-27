@@ -1,4 +1,5 @@
 ---
 # defaults file for simple_compose
 
-simple_compose_username: "{{  username  }}"
+simple_compose_username: "{{ username }}"
+simple_compose_projects: []

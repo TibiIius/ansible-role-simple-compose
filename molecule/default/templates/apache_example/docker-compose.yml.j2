@@ -1,0 +1,11 @@
+services:
+  apache-example:
+    image: docker.io/httpd:alpine
+    ports:
+      - 8081:80
+    healthcheck:
+      test: wget -O- http://localhost || exit 1
+      interval: 5s
+      retries: 60
+      start_period: 2s
+      timeout: 10s
