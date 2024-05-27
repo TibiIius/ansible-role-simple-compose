@@ -1,6 +1,6 @@
 galaxy_info:
   role_name: simple_compose
-  author: tibilius
+  author: tibiiius
   description: Super simple role to setup multiple Docker Compose projects with minimal overhead/copy&paste.
 
   license: MIT
