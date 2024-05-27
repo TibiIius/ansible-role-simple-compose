@@ -57,6 +57,6 @@
       vars:
         docker_users:
           - "{{ username }}"
-    - role: tibilius.simple_compose
+    - role: tibiiius.simple_compose
       vars:
         simple_compose_username: "{{ username }}"

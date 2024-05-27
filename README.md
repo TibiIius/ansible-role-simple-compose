@@ -74,7 +74,7 @@ Simple playbook example:
         # This role is optional, but it makes it easier to install Docker
         - role: geerlingguy.docker
         # Actual magic happens here
-        - role: tibilius.simple_compose
+        - role: tibiiius.simple_compose
 ```
 
 Afterward, make sure to create template files in the `template` directory. The role uses Ansible's built-in template module to render the files, so just stick to Ansible's default directory structure. The role will look for the files in `templates/{{ name }}/{{ file }}` where `name` is the name of the project and `file` is the file name. It will do so for each project specified.
