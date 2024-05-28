@@ -10,6 +10,7 @@ There are some things I have planned for this role, namely:
 
 - Add support for Compose v1 (even though it is deprecated, it's still used here and there, and I think it's worth supporting)
 - Add support for handlers (i.e. when a Compose project is updated, notify any given handler(s), can be useful for some Compose projects)
+- Add more configuration options (e.g. use variables for folder/file permissions, right now they're hardcoded to `0700` for the project dir and `0400` for the project files)
 
 If you have any suggestions or want to contribute, feel free to open an issue or a pull request.
 
