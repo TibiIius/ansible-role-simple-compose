@@ -34,7 +34,7 @@ Set `simple_compose_username` to the username of your Docker administering user.
 `simple_compose_projects` is a list of dictionaries that define the projects you want to deploy. Each dictionary should have the following keys:
 - `name`: The name of the project. This will be used to differentiate the loop runs in Ansible's CLI output, and also dicates the location to the template files used for the role.
 - `directory`: The directory where the project is located. This should be an absolute path.
-- `files`: All files belonging to the compose project, like `docker-compose.yaml`, `.db.env`, `.web.env`, `.env`, etc.
+- `files`: All files belonging to the compose project, like `docker-compose.yaml`, `.db.env`, `.web.env`, `.env`, etc. These **must** be template files, i.e. they have to end with `.j2`. However, the `.j2` ending of the `files` array has to be emitted.
 
 Dependencies
 ------------
@@ -79,7 +79,7 @@ Simple playbook example:
         - role: tibiiius.simple_compose
 ```
 
-Afterward, make sure to create template files in the `template` directory. The role uses Ansible's built-in template module to render the files, so just stick to Ansible's default directory structure. The role will look for the files in `templates/{{ name }}/{{ file }}` where `name` is the name of the project and `file` is the file name. It will do so for each project specified.
+Afterward, make sure to create template files in the `template` directory. The role uses Ansible's built-in template module to render the files, so just stick to Ansible's default directory structure. The role will look for the files in `templates/{{ name }}/{{ file }}.j2` where `name` is the name of the project and `file` is the file name specified in the `files` array. It will do so for each project specified.
 
 License
 -------
