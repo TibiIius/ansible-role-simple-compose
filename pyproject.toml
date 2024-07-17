@@ -11,7 +11,7 @@ python = "^3.12"
 ansible = "^10.1.0"
 
 [tool.poetry.group.dev.dependencies]
-ansible-dev-tools = "^24.6.1"
+ansible-dev-tools = "^24.7.1"
 molecule-plugins = {extras = ["docker"], version = "^23.5.3"}
 ansible-lint = { version = "^24.2.2", markers = "platform_system != 'Windows'" }
 
