@@ -113,13 +113,13 @@ test = ["coverage[toml]", "pytest", "pytest-xdist", "tox"]
 
 [[package]]
 name = "ansible-dev-tools"
-version = "25.4.1"
+version = "25.5.1"
 description = "Ansible Developtment Tools kit bundles all tools needed for content creation and testing."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "ansible_dev_tools-25.4.1-py3-none-any.whl", hash = "sha256:a6011247ea3b9a35eaf15e552d27aa6bc20b9d873ec54e40edff0dbf7e63327d"},
-    {file = "ansible_dev_tools-25.4.1.tar.gz", hash = "sha256:bfb766afc5e8ad543196eabd1f020b23e454c335ae0a7d531c81a46094f24ba3"},
+    {file = "ansible_dev_tools-25.5.1-py3-none-any.whl", hash = "sha256:6bf1baca10bd0bac5ad571ddd3900063fc6dfb4908e0092484666db7358fd63e"},
+    {file = "ansible_dev_tools-25.5.1.tar.gz", hash = "sha256:d817760be6bbde356fbef19784ad492c46bb6d5ee2169ae8e3bd47a4bc6cfba1"},
 ]
 
 [package.dependencies]
