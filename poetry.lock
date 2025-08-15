@@ -956,13 +956,13 @@ testinfra = ["pytest-testinfra (>=8.1.0)"]
 
 [[package]]
 name = "molecule-plugins"
-version = "23.7.0"
+version = "25.8.12"
 description = "Molecule Plugins"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "molecule_plugins-23.7.0-py3-none-any.whl", hash = "sha256:5e577231c7d95d7f7dc7146f3527d4692ee30a8c0ea0e8353b15ceba75f7d28e"},
-    {file = "molecule_plugins-23.7.0.tar.gz", hash = "sha256:c28b08e25c91fcc679e65d9d18d2b4bb33712aaed2fefdea72b6253c6bd19635"},
+    {file = "molecule_plugins-25.8.12-py3-none-any.whl", hash = "sha256:c5b8ceb209a5ff87326631d60408f8d08b9431b2e339dad4c620130b50279ce0"},
+    {file = "molecule_plugins-25.8.12.tar.gz", hash = "sha256:75f32763e90275bfc24bcc0d27b9bb22ac973658bf902b2e3e8af8e2a1c32083"},
 ]
 
 [package.dependencies]
@@ -1829,4 +1829,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "50451eb9d5a8729ccf6a98bd911698bde169e81987138105797325fb732554cb"
+content-hash = "4b1dacdc0ada20a5df16318416b6b62337da8a8c9f36346762bf7405ed78e6af"
