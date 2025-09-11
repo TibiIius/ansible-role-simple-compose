@@ -4,7 +4,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         distro:
           - ubuntu2404
