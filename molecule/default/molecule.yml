@@ -4,7 +4,7 @@ driver:
 platforms:
   - name: instance
     # Geerlingguy to the rescue. This image includes a lot of useful tools for testing, like systemd.
-    image: docker.io/geerlingguy/docker-ubuntu2204-ansible:latest
+    image: docker.io/geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2404}-ansible:latest
     privileged: true
     # Start with systemd as the init system
     command: /usr/sbin/init
@@ -12,4 +12,3 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     cgroupns_mode: host
-
