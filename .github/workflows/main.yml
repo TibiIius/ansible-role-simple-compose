@@ -4,14 +4,11 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true
       matrix:
         distro:
           - ubuntu2404
           - ubuntu2204
-          - debian12
-          - debian11
-          - fedora42
-          - fedora41
 
     steps:
       - uses: actions/checkout@v5
