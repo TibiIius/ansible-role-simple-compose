@@ -9,6 +9,10 @@ jobs:
         distro:
           - ubuntu2404
           - ubuntu2204
+          - debian13
+          - debian12
+          - fedora42
+          - fedora41
 
     steps:
       - uses: actions/checkout@v5
