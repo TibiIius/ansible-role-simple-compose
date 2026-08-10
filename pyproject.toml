@@ -9,7 +9,7 @@ dependencies = ["ansible>=14.2,<15"]
 
 [dependency-groups]
 dev = [
-	"ansible-dev-tools>=25.0.0,<26",
+	"ansible-dev-tools>=26.7.2,<27",
 	"molecule-plugins[docker]>=25.0.0,<26",
 	"ansible-lint>=25.0.0,<26 ; platform_system != 'Windows'",
 ]
