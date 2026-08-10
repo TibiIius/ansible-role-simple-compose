@@ -11,7 +11,7 @@ dependencies = ["ansible>=12.0.0,<13"]
 dev = [
 	"ansible-dev-tools>=25.0.0,<26",
 	"molecule-plugins[docker]>=25.0.0,<26",
-	"ansible-lint>=25.0.0,<26 ; platform_system != 'Windows'",
+	"ansible-lint>=26.6,<27; platform_system != 'Windows'",
 ]
 
 [tool.uv]
