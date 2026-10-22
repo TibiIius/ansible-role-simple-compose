@@ -3,7 +3,7 @@ name = "ansible-role-simple-compose"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Tim Friedrich Brüggemann", email = "oss@timfb.dev" }]
-requires-python = "~=3.14.7"
+requires-python = "~=3.15.1"
 readme = "README.md"
 dependencies = ["ansible>=14.2,<15"]
 
