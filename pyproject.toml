@@ -5,7 +5,7 @@ description = ""
 authors = [{ name = "Tim Friedrich Brüggemann", email = "oss@timfb.dev" }]
 requires-python = "~=3.14.7"
 readme = "README.md"
-dependencies = ["ansible>=14.2,<15"]
+dependencies = ["ansible>=15,<16"]
 
 [dependency-groups]
 dev = [
